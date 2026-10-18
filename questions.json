@@ -1,0 +1,221 @@
+{
+  "metadata": {
+    "version": "1.0",
+    "scale_min": -1.0,
+    "scale_max": 1.0,
+    "total_axes": 14,
+    "total_variables": 42
+  },
+  "questions": [
+    {
+      "question_id": "Q_AXIS_01",
+      "pool_id": "POOL_01_VOCAL_ENERGY",
+      "category": "Acoustic Texture",
+      "axis_id": "AXIS_01_VOCAL_ENERGY",
+      "question_type": "multiple_choice",
+      "question_text": "How loud and resonant does this language sound when spoken?",
+      "options": [
+        {"option_id": "A", "text": "Like a pure, breathless whisper with no throat vibration.", "effects": {"voiceless_consonant_weight": 1.0, "voiced_plosives_weight": -1.0, "tonal_probability": -1.0}},
+        {"option_id": "B", "text": "Soft and hushed, mostly using air rather than loud voice.", "effects": {"voiceless_consonant_weight": 0.5, "voiced_plosives_weight": -0.5, "tonal_probability": -0.5}},
+        {"option_id": "C", "text": "Normal conversational volume, mixing soft and vibrating sounds.", "effects": {"voiceless_consonant_weight": 0.0, "voiced_plosives_weight": 0.0, "tonal_probability": 0.0}},
+        {"option_id": "D", "text": "Strong and resonant, with clear chest vibration.", "effects": {"voiceless_consonant_weight": -0.5, "voiced_plosives_weight": 0.5, "tonal_probability": 0.5}},
+        {"option_id": "E", "text": "Booming, loud, and dramatic, with musical pitch changes in the voice.", "effects": {"voiceless_consonant_weight": -1.0, "voiced_plosives_weight": 1.0, "tonal_probability": 1.0}}
+      ]
+    },
+    {
+      "question_id": "Q_AXIS_02",
+      "pool_id": "POOL_02_AIRFLOW",
+      "category": "Acoustic Texture",
+      "axis_id": "AXIS_02_AIRFLOW_CONTINUITY",
+      "question_type": "multiple_choice",
+      "question_text": "Does the language flow smoothly like a song, or does it have sharp stops and clicks?",
+      "options": [
+        {"option_id": "A", "text": "Very choppy and percussive, full of sharp clicks, air stops, and harsh consonant clusters.", "effects": {"vowel_to_consonant_ratio": -1.0, "glottal_and_click_freq": 1.0, "max_consonant_cluster": 1.0}},
+        {"option_id": "B", "text": "Rhythmic and crisp, with frequent hard consonants and occasional throat stops.", "effects": {"vowel_to_consonant_ratio": -0.5, "glottal_and_click_freq": 0.5, "max_consonant_cluster": 0.5}},
+        {"option_id": "C", "text": "Balanced rhythm between consonants and vowels.", "effects": {"vowel_to_consonant_ratio": 0.0, "glottal_and_click_freq": -0.3, "max_consonant_cluster": 0.0}},
+        {"option_id": "D", "text": "Smooth and poetic, avoiding harsh consonant collisions.", "effects": {"vowel_to_consonant_ratio": 0.5, "glottal_and_click_freq": -0.8, "max_consonant_cluster": -0.5}},
+        {"option_id": "E", "text": "Purely melodic and liquid, almost entirely made of vowels and soft flowing sounds.", "effects": {"vowel_to_consonant_ratio": 1.0, "glottal_and_click_freq": -1.0, "max_consonant_cluster": -1.0}}
+      ]
+    },
+    {
+      "question_id": "Q_AXIS_03",
+      "pool_id": "POOL_03_ARTICULATORY_DEPTH",
+      "category": "Acoustic Texture",
+      "axis_id": "AXIS_03_ARTICULATORY_DEPTH",
+      "question_type": "multiple_choice",
+      "question_text": "Which part of the mouth do speakers use the most to form their words?",
+      "options": [
+        {"option_id": "A", "text": "Right at the front of the lips and teeth, with bright vowels (like i and e).", "effects": {"labial_dental_weight": 1.0, "velar_uvular_weight": -1.0, "back_vowel_bias": -1.0}},
+        {"option_id": "B", "text": "Mostly near the front of the mouth and tip of the tongue.", "effects": {"labial_dental_weight": 0.5, "velar_uvular_weight": -0.5, "back_vowel_bias": -0.5}},
+        {"option_id": "C", "text": "Evenly distributed across the lips, tongue, and throat.", "effects": {"labial_dental_weight": 0.0, "velar_uvular_weight": 0.0, "back_vowel_bias": 0.0}},
+        {"option_id": "D", "text": "Towards the back of the mouth, with deeper vowels (like o and u).", "effects": {"labial_dental_weight": -0.5, "velar_uvular_weight": 0.5, "back_vowel_bias": 0.5}},
+        {"option_id": "E", "text": "Deep in the throat, guttural and dark, with heavy back-of-the-throat sounds.", "effects": {"labial_dental_weight": -1.0, "velar_uvular_weight": 1.0, "back_vowel_bias": 1.0}}
+      ]
+    },
+    {
+      "question_id": "Q_AXIS_04",
+      "pool_id": "POOL_04_WORD_DENSITY",
+      "category": "Word Architecture",
+      "axis_id": "AXIS_04_WORD_DENSITY",
+      "question_type": "multiple_choice",
+      "question_text": "When you look at a page written in this language, how long are the words?",
+      "options": [
+        {"option_id": "A", "text": "Tiny, one-syllable words that never attach to each other.", "effects": {"base_root_length": -1.0, "max_affixes_per_word": -1.0, "compound_word_prob": -1.0}},
+        {"option_id": "B", "text": "Short words with only an occasional simple ending.", "effects": {"base_root_length": -0.5, "max_affixes_per_word": -0.5, "compound_word_prob": -0.5}},
+        {"option_id": "C", "text": "Medium-sized words, similar to English or Spanish.", "effects": {"base_root_length": 0.0, "max_affixes_per_word": 0.0, "compound_word_prob": 0.0}},
+        {"option_id": "D", "text": "Long words that glue multiple prefixes, suffixes, and nouns together.", "effects": {"base_root_length": 0.5, "max_affixes_per_word": 0.5, "compound_word_prob": 0.5}},
+        {"option_id": "E", "text": "Massive words where an entire sentence gets packed into a single giant word.", "effects": {"base_root_length": 1.0, "max_affixes_per_word": 1.0, "compound_word_prob": 1.0}}
+      ]
+    },
+    {
+      "question_id": "Q_AXIS_05",
+      "pool_id": "POOL_05_MORPHEME_FUSION",
+      "category": "Word Architecture",
+      "axis_id": "AXIS_05_MORPHEME_FUSION",
+      "question_type": "multiple_choice",
+      "question_text": "How regular and predictable are the grammar rules when modifying a word?",
+      "options": [
+        {"option_id": "A", "text": "100% logical like Lego blocks: endings snap on cleanly with strict vowel harmony and zero exceptions.", "effects": {"vowel_harmony_strictness": 1.0, "root_mutation_rate": -1.0, "irregular_exception_rate": -1.0}},
+        {"option_id": "B", "text": "Very regular and harmonious, with almost no irregular words.", "effects": {"vowel_harmony_strictness": 0.5, "root_mutation_rate": -0.5, "irregular_exception_rate": -0.5}},
+        {"option_id": "C", "text": "Moderately regular, with a few common irregular words.", "effects": {"vowel_harmony_strictness": 0.0, "root_mutation_rate": 0.0, "irregular_exception_rate": 0.0}},
+        {"option_id": "D", "text": "Words often mutate on the inside when conjugated, with several ancient exceptions.", "effects": {"vowel_harmony_strictness": -0.5, "root_mutation_rate": 0.5, "irregular_exception_rate": 0.5}},
+        {"option_id": "E", "text": "Ancient and chaotic: word roots constantly change their internal vowels and many words break the rules.", "effects": {"vowel_harmony_strictness": -1.0, "root_mutation_rate": 1.0, "irregular_exception_rate": 1.0}}
+      ]
+    },
+    {
+      "question_id": "Q_AXIS_06",
+      "pool_id": "POOL_06_ACTION_PROMINENCE",
+      "category": "Thought Flow",
+      "axis_id": "AXIS_06_ACTION_PROMINENCE",
+      "question_type": "multiple_choice",
+      "question_text": "When speakers describe an event, where do they put the action (the verb) in the sentence?",
+      "options": [
+        {"option_id": "A", "text": "Right at the very beginning of the sentence to grab attention immediately (Action -> Actor -> Target).", "effects": {"verb_slot_index": -1.0, "adposition_type": -1.0, "auxiliary_placement": -1.0}},
+        {"option_id": "B", "text": "Usually near the start, leading with action and prepositions.", "effects": {"verb_slot_index": -0.5, "adposition_type": -0.5, "auxiliary_placement": -0.5}},
+        {"option_id": "C", "text": "Right in the middle of the sentence, between the actor and the target (like English).", "effects": {"verb_slot_index": 0.0, "adposition_type": -0.2, "auxiliary_placement": 0.0}},
+        {"option_id": "D", "text": "Towards the end, setting up the people and objects first.", "effects": {"verb_slot_index": 0.5, "adposition_type": 0.5, "auxiliary_placement": 0.5}},
+        {"option_id": "E", "text": "Strictly at the very end of the sentence, saving the action for the final climax (Actor -> Target -> Action).", "effects": {"verb_slot_index": 1.0, "adposition_type": 1.0, "auxiliary_placement": 1.0}}
+      ]
+    },
+    {
+      "question_id": "Q_AXIS_07",
+      "pool_id": "POOL_07_STRUCTURAL_RIGIDITY",
+      "category": "Thought Flow",
+      "axis_id": "AXIS_07_STRUCTURAL_RIGIDITY",
+      "question_type": "multiple_choice",
+      "question_text": "Can speakers move words around freely in a sentence for poetic effect, or must words stay in a strict order?",
+      "options": [
+        {"option_id": "A", "text": "Strict word order is mandatory, using small helper words ('the', 'to', 'of') instead of noun endings.", "effects": {"case_marking_count": -1.0, "syntax_scramble_prob": -1.0, "helper_particle_density": 1.0}},
+        {"option_id": "B", "text": "Mostly fixed order with common helper particles.", "effects": {"case_marking_count": -0.5, "syntax_scramble_prob": -0.5, "helper_particle_density": 0.5}},
+        {"option_id": "C", "text": "Balanced: uses a few noun endings for subject/object and some helper words.", "effects": {"case_marking_count": 0.0, "syntax_scramble_prob": 0.0, "helper_particle_density": 0.0}},
+        {"option_id": "D", "text": "Flexible order: special suffixes on nouns show who did what, reducing the need for helper words.", "effects": {"case_marking_count": 0.5, "syntax_scramble_prob": 0.5, "helper_particle_density": -0.5}},
+        {"option_id": "E", "text": "Total poetic freedom: nouns carry rich case endings so words can be placed in any order.", "effects": {"case_marking_count": 1.0, "syntax_scramble_prob": 1.0, "helper_particle_density": -1.0}}
+      ]
+    },
+    {
+      "question_id": "Q_AXIS_08",
+      "pool_id": "POOL_08_NOUN_CLASSES",
+      "category": "World Classification",
+      "axis_id": "AXIS_08_NOUN_CATEGORIZATION",
+      "question_type": "multiple_choice",
+      "question_text": "Does the grammar divide objects and living things into special categories or genders?",
+      "options": [
+        {"option_id": "A", "text": "No categories at all: nouns and adjectives never change for gender or class.", "effects": {"noun_class_total": -1.0, "class_prefix_visibility": -1.0, "adjective_agreement_flag": -1.0}},
+        {"option_id": "B", "text": "Simple masculine/feminine split, but without changing the adjectives much.", "effects": {"noun_class_total": -0.3, "class_prefix_visibility": -0.3, "adjective_agreement_flag": -0.5}},
+        {"option_id": "C", "text": "Classic 2 or 3 genders where adjectives match the noun.", "effects": {"noun_class_total": 0.0, "class_prefix_visibility": 0.2, "adjective_agreement_flag": 0.5}},
+        {"option_id": "D", "text": "Divides the world by soul/animacy (humans, animals, tools, nature) with visible prefixes.", "effects": {"noun_class_total": 0.5, "class_prefix_visibility": 0.6, "adjective_agreement_flag": 0.8}},
+        {"option_id": "E", "text": "Obsessive classification by physical shape and soul (round, flat, long, liquid, living), marking every noun and adjective.", "effects": {"noun_class_total": 1.0, "class_prefix_visibility": 1.0, "adjective_agreement_flag": 1.0}}
+      ]
+    },
+    {
+      "question_id": "Q_AXIS_09",
+      "pool_id": "POOL_09_ABSTRACTION",
+      "category": "World Classification",
+      "axis_id": "AXIS_09_CONCEPTUAL_ABSTRACTION",
+      "question_type": "multiple_choice",
+      "question_text": "How does this language invent words for complex things like 'tear', 'volcano', or 'wisdom'?",
+      "options": [
+        {"option_id": "A", "text": "By combining poetic nature and body words literally (e.g., 'eye-water' for tear, 'fire-mountain' for volcano).", "effects": {"body_nature_metaphor_rate": 1.0, "unique_root_generation_rate": -1.0, "abstract_derivational_affixes": -1.0}},
+        {"option_id": "B", "text": "Mostly through physical metaphors and nature combinations.", "effects": {"body_nature_metaphor_rate": 0.5, "unique_root_generation_rate": -0.5, "abstract_derivational_affixes": -0.5}},
+        {"option_id": "C", "text": "An equal mix of poetic compound words and independent vocabulary.", "effects": {"body_nature_metaphor_rate": 0.0, "unique_root_generation_rate": 0.0, "abstract_derivational_affixes": 0.0}},
+        {"option_id": "D", "text": "Mostly by creating unique roots and adding academic suffixes.", "effects": {"body_nature_metaphor_rate": -0.5, "unique_root_generation_rate": 0.5, "abstract_derivational_affixes": 0.5}},
+        {"option_id": "E", "text": "Purely abstract and scientific: every concept gets its own unique root word and specialized suffixes (-ism, -ology).", "effects": {"body_nature_metaphor_rate": -1.0, "unique_root_generation_rate": 1.0, "abstract_derivational_affixes": 1.0}}
+      ]
+    },
+    {
+      "question_id": "Q_AXIS_10",
+      "pool_id": "POOL_10_TIME",
+      "category": "Precision & Time",
+      "axis_id": "AXIS_10_TEMPORAL_RIGIDITY",
+      "question_type": "multiple_choice",
+      "question_text": "How strictly do verbs track time (past, present, future) and whether an action is finished?",
+      "options": [
+        {"option_id": "A", "text": "Verbs never change for time; speakers just add standalone words like 'yesterday' if needed.", "effects": {"tense_marker_count": -1.0, "aspect_affix_weight": -1.0, "standalone_time_adverbs": 1.0}},
+        {"option_id": "B", "text": "Minimal verb changes, relying mostly on context and time words.", "effects": {"tense_marker_count": -0.5, "aspect_affix_weight": -0.5, "standalone_time_adverbs": 0.5}},
+        {"option_id": "C", "text": "Standard past, present, and future verb endings.", "effects": {"tense_marker_count": 0.0, "aspect_affix_weight": 0.0, "standalone_time_adverbs": 0.0}},
+        {"option_id": "D", "text": "Detailed verb endings that mark both time and whether the action is continuous or habitual.", "effects": {"tense_marker_count": 0.5, "aspect_affix_weight": 0.5, "standalone_time_adverbs": -0.5}},
+        {"option_id": "E", "text": "Hyper-precise timeline: verbs must mark exact temporal distance (remote past, mythic time) and completion state.", "effects": {"tense_marker_count": 1.0, "aspect_affix_weight": 1.0, "standalone_time_adverbs": -1.0}}
+      ]
+    },
+    {
+      "question_id": "Q_AXIS_11",
+      "pool_id": "POOL_11_EVIDENTIALITY",
+      "category": "Precision & Time",
+      "axis_id": "AXIS_11_INFORMATION_RELIABILITY",
+      "question_type": "multiple_choice",
+      "question_text": "Does the grammar force speakers to prove how they know a piece of information?",
+      "options": [
+        {"option_id": "A", "text": "Never: you state facts directly without marking if you saw it or heard a rumor.", "effects": {"evidential_suffix_count": -1.0, "mood_marker_complexity": -1.0, "verb_string_length_modifier": -1.0}},
+        {"option_id": "B", "text": "Only basic markers for certainty or doubt.", "effects": {"evidential_suffix_count": -0.5, "mood_marker_complexity": -0.3, "verb_string_length_modifier": -0.5}},
+        {"option_id": "C", "text": "Moderate: verbs mark wishes and possibilities, with optional source markers.", "effects": {"evidential_suffix_count": 0.0, "mood_marker_complexity": 0.0, "verb_string_length_modifier": 0.0}},
+        {"option_id": "D", "text": "Strict: verbs require a suffix showing if you witnessed the event directly or heard it second-hand.", "effects": {"evidential_suffix_count": 0.5, "mood_marker_complexity": 0.5, "verb_string_length_modifier": 0.5}},
+        {"option_id": "E", "text": "Mandatory truth-tracking: every verb must carry suffixes proving if it was seen, heard as rumor, deduced from clues, or remembered.", "effects": {"evidential_suffix_count": 1.0, "mood_marker_complexity": 1.0, "verb_string_length_modifier": 1.0}}
+      ]
+    },
+    {
+      "question_id": "Q_AXIS_12",
+      "pool_id": "POOL_12_SOCIAL_STATUS",
+      "category": "Social & Material Expression",
+      "axis_id": "AXIS_12_SOCIAL_STRATIFICATION",
+      "question_type": "multiple_choice",
+      "question_text": "Does the language change depending on the social rank or status of the person you are talking to?",
+      "options": [
+        {"option_id": "A", "text": "Total equality: everyone uses the exact same pronouns and verbs whether speaking to a beggar or a ruler.", "effects": {"pronoun_set_multipliers": -1.0, "honorific_affix_freq": -1.0, "lexical_caste_split": -1.0}},
+        {"option_id": "B", "text": "Mostly equal, with only minor polite expressions.", "effects": {"pronoun_set_multipliers": -0.5, "honorific_affix_freq": -0.5, "lexical_caste_split": -0.5}},
+        {"option_id": "C", "text": "Has a polite/formal 'you' and 'I' for strangers or elders.", "effects": {"pronoun_set_multipliers": 0.0, "honorific_affix_freq": 0.0, "lexical_caste_split": -0.2}},
+        {"option_id": "D", "text": "Strong hierarchy: verbs take honorific suffixes and pronouns change by social class.", "effects": {"pronoun_set_multipliers": 0.5, "honorific_affix_freq": 0.6, "lexical_caste_split": 0.4}},
+        {"option_id": "E", "text": "Strict caste system: completely different pronouns and separate royal/commoner vocabulary for everyday actions.", "effects": {"pronoun_set_multipliers": 1.0, "honorific_affix_freq": 1.0, "lexical_caste_split": 1.0}}
+      ]
+    },
+    {
+      "question_id": "Q_AXIS_13",
+      "pool_id": "POOL_13_MATERIAL_FRICTION",
+      "category": "Social & Material Expression",
+      "axis_id": "AXIS_13_INSCRIPTION_FRICTION",
+      "question_type": "multiple_choice",
+      "question_text": "What physical tools and surfaces were used to create this language's writing system?",
+      "options": [
+        {"option_id": "A", "text": "Chiseled into hard stone or carved into wood with a knife (straight lines and sharp angles only).", "effects": {"bezier_curve_ratio": -1.0, "sharp_vertex_angle_weight": 1.0, "continuous_stroke_length": -1.0}},
+        {"option_id": "B", "text": "Pressed into clay or scratched onto bark with angular strokes.", "effects": {"bezier_curve_ratio": -0.5, "sharp_vertex_angle_weight": 0.5, "continuous_stroke_length": -0.5}},
+        {"option_id": "C", "text": "Written with a standard pen on parchment, balancing straight lines and curves.", "effects": {"bezier_curve_ratio": 0.0, "sharp_vertex_angle_weight": 0.0, "continuous_stroke_length": 0.0}},
+        {"option_id": "D", "text": "Inscribed on delicate palm leaves with a stylus, using rounded shapes to avoid tearing the leaf.", "effects": {"bezier_curve_ratio": 0.6, "sharp_vertex_angle_weight": -0.6, "continuous_stroke_length": 0.4}},
+        {"option_id": "E", "text": "Painted with a soft ink brush on silk or paper in long, flowing, unbroken calligraphic curves.", "effects": {"bezier_curve_ratio": 1.0, "sharp_vertex_angle_weight": -1.0, "continuous_stroke_length": 1.0}}
+      ]
+    },
+    {
+      "question_id": "Q_AXIS_14",
+      "pool_id": "POOL_14_SCRIPT_DENSITY",
+      "category": "Social & Material Expression",
+      "axis_id": "AXIS_14_GRAPHIC_DENSITY",
+      "question_type": "multiple_choice",
+      "question_text": "What does a single written symbol represent in this writing system?",
+      "options": [
+        {"option_id": "A", "text": "A single basic letter/sound (a simple, compact Alphabet).", "effects": {"total_unique_glyphs": -1.0, "strokes_per_glyph_limit": -1.0, "glyph_to_phoneme_mapping": -1.0}},
+        {"option_id": "B", "text": "Mostly single sounds with slightly more ornate letter shapes.", "effects": {"total_unique_glyphs": -0.5, "strokes_per_glyph_limit": -0.4, "glyph_to_phoneme_mapping": -0.5}},
+        {"option_id": "C", "text": "A complete syllable joining a consonant and a vowel (a Syllabary).", "effects": {"total_unique_glyphs": 0.0, "strokes_per_glyph_limit": 0.0, "glyph_to_phoneme_mapping": 0.0}},
+        {"option_id": "D", "text": "Complex syllable blocks with multiple strokes per character.", "effects": {"total_unique_glyphs": 0.5, "strokes_per_glyph_limit": 0.5, "glyph_to_phoneme_mapping": 0.3}},
+        {"option_id": "E", "text": "An entire word or concept per symbol (intricate Logograms / Hieroglyphs).", "effects": {"total_unique_glyphs": 1.0, "strokes_per_glyph_limit": 1.0, "glyph_to_phoneme_mapping": 1.0}}
+      ]
+    }
+  ]
+}

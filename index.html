@@ -1,0 +1,1056 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>14axes | Fictional Language Generator</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-cream: #F7F5F0;
+      --card-bg: #FCFBF9;
+      --text-dark: #141615;
+      --text-muted: #5A5D5A;
+      --accent-red: #8B1E24;
+      --btn-dark: #132A23;
+      --btn-dark-hover: #1E3F35;
+      --lavender-bg: #DFD5F8;
+      --lavender-dark: #452778;
+      --pink-pill-bg: #F9E3E6;
+      --pink-pill-icon: #9B1C31;
+      --border-soft: #E6E3DC;
+      --green-icon: #2E8B57;
+      --red-icon: #C93B3B;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    body {
+      background-color: var(--bg-cream);
+      color: var(--text-dark);
+      line-height: 1.5;
+      min-height: 100vh;
+    }
+
+    /* NAVBAR */
+    header {
+      border-bottom: 1px solid var(--border-soft);
+      background-color: var(--bg-cream);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .nav-container {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 16px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      cursor: pointer;
+    }
+    .logo span {
+      font-weight: 400;
+    }
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+    .nav-links a {
+      text-decoration: none;
+      color: inherit;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover {
+      color: var(--text-dark);
+    }
+    .btn-pill-dark {
+      background-color: var(--btn-dark);
+      color: #fff;
+      padding: 12px 24px;
+      border-radius: 999px;
+      font-weight: 600;
+      font-size: 0.92rem;
+      border: none;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: background 0.2s, transform 0.1s;
+    }
+    .btn-pill-dark:hover {
+      background-color: var(--btn-dark-hover);
+    }
+    .btn-pill-outline {
+      background-color: transparent;
+      color: var(--text-dark);
+      padding: 12px 24px;
+      border-radius: 999px;
+      font-weight: 600;
+      font-size: 0.92rem;
+      border: 1.5px solid var(--text-dark);
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .btn-pill-outline:hover {
+      background-color: #EAE6DF;
+    }
+
+    /* HERO SECTION (IMAGEN 1) */
+    .section-container {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 64px 24px;
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 56px;
+      align-items: center;
+    }
+    .eyebrow {
+      color: var(--accent-red);
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+      display: block;
+    }
+    .hero-title {
+      font-size: 4rem;
+      font-weight: 800;
+      line-height: 1.04;
+      letter-spacing: -1.8px;
+      margin-bottom: 24px;
+    }
+    .hero-title .highlight {
+      color: var(--accent-red);
+      display: block;
+    }
+    .hero-desc {
+      color: var(--text-muted);
+      font-size: 1.05rem;
+      max-width: 520px;
+      margin-bottom: 32px;
+    }
+    .hero-buttons {
+      display: flex;
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+    .hero-Trust-tags {
+      display: flex;
+      gap: 18px;
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+    .hero-Trust-tags span::before {
+      content: "• ";
+      color: var(--btn-dark);
+      font-weight: bold;
+    }
+
+    /* TARJETA DE EJEMPLO DERECHA (IMAGEN 1) */
+    .example-label {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 1.2px;
+      color: var(--lavender-dark);
+      margin-bottom: 10px;
+      display: block;
+    }
+    .preview-card {
+      background: var(--card-bg);
+      border-radius: 22px;
+      border: 1px solid var(--border-soft);
+      overflow: hidden;
+      box-shadow: 0 14px 36px rgba(0, 0, 0, 0.04);
+    }
+    .preview-card-header {
+      background-color: var(--lavender-bg);
+      padding: 28px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 3px solid var(--lavender-dark);
+    }
+    .badge-dark-purple {
+      background-color: var(--lavender-dark);
+      color: #fff;
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 5px 12px;
+      border-radius: 999px;
+      display: inline-block;
+      margin-bottom: 10px;
+    }
+    .preview-card-header h3 {
+      color: var(--lavender-dark);
+      font-size: 1.85rem;
+      font-weight: 800;
+      letter-spacing: -0.6px;
+    }
+    .circle-score {
+      width: 78px;
+      height: 78px;
+      border-radius: 50%;
+      border: 7px solid var(--lavender-dark);
+      border-top-color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: var(--card-bg);
+      color: var(--lavender-dark);
+    }
+    .circle-score strong {
+      font-size: 1.05rem;
+      font-weight: 800;
+      line-height: 1;
+    }
+    .circle-score small {
+      font-size: 0.6rem;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+    }
+    .preview-row {
+      padding: 20px 28px;
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      border-bottom: 1px solid var(--border-soft);
+    }
+    .preview-row:last-child {
+      border-bottom: none;
+    }
+    .preview-icon-box {
+      width: 58px;
+      height: 58px;
+      border-radius: 14px;
+      background: #EFECE6;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 1.2rem;
+      color: var(--btn-dark);
+      flex-shrink: 0;
+    }
+    .tag-lavender {
+      background: var(--lavender-bg);
+      color: var(--lavender-dark);
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: 999px;
+      display: inline-block;
+      margin-bottom: 4px;
+    }
+    .preview-row h4 {
+      font-size: 1.15rem;
+      font-weight: 800;
+    }
+    .tag-beige {
+      background: #ECE9E2;
+      color: var(--text-muted);
+      font-size: 0.74rem;
+      font-weight: 600;
+      padding: 2px 10px;
+      border-radius: 999px;
+      display: inline-block;
+      margin-top: 4px;
+    }
+
+    /* SECCIÓN DE LOS 14 EJES (IMAGEN 2) */
+    .axes-header-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 40px;
+      gap: 32px;
+      flex-wrap: wrap;
+    }
+    .axes-title {
+      font-size: 3rem;
+      font-weight: 800;
+      letter-spacing: -1.2px;
+    }
+    .axes-subtitle {
+      color: var(--text-muted);
+      max-width: 480px;
+      font-size: 1rem;
+    }
+    .axes-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(275px, 1fr));
+      gap: 20px;
+    }
+    .axis-card {
+      background-color: var(--card-bg);
+      border: 1px solid var(--border-soft);
+      border-radius: 18px;
+      padding: 24px;
+      transition: transform 0.15s, box-shadow 0.15s;
+    }
+    .axis-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.04);
+    }
+    .axis-card-title {
+      font-size: 1.25rem;
+      font-weight: 800;
+      margin-bottom: 10px;
+      display: flex;
+      gap: 8px;
+      align-items: baseline;
+    }
+    .axis-num {
+      color: var(--accent-red);
+      font-size: 0.9rem;
+      font-weight: 800;
+    }
+    .axis-poles {
+      font-size: 0.84rem;
+      font-weight: 700;
+      color: var(--text-dark);
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+    .axis-poles span.arrow {
+      color: var(--text-muted);
+      font-weight: 400;
+    }
+    .axis-desc {
+      font-size: 0.86rem;
+      color: var(--text-muted);
+      line-height: 1.55;
+    }
+
+    /* VISTA DEL CUESTIONARIO (IMAGEN 3) */
+    #quiz-view, #results-view {
+      display: none;
+    }
+    .quiz-wrapper {
+      max-width: 780px;
+      margin: 42px auto;
+      padding: 0 20px;
+    }
+    .progress-header {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+    .progress-Header-bold {
+      color: var(--text-dark);
+      font-weight: 800;
+    }
+    .segmented-bar {
+      display: grid;
+      grid-template-columns: repeat(14, 1fr);
+      gap: 6px;
+      margin-bottom: 24px;
+    }
+    .segment {
+      height: 6px;
+      border-radius: 99px;
+      background-color: #DEDAD0;
+      transition: background-color 0.3s;
+    }
+    .segment.active {
+      background-color: #7C7D7A;
+    }
+    .segment.completed {
+      background-color: var(--btn-dark);
+    }
+
+    .question-card {
+      background-color: var(--card-bg);
+      border: 1px solid var(--border-soft);
+      border-top: 4px solid var(--btn-dark);
+      border-radius: 22px;
+      padding: 40px;
+      position: relative;
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.03);
+      overflow: hidden;
+    }
+    .watermark-num {
+      position: absolute;
+      top: 18px;
+      right: 32px;
+      font-size: 5.5rem;
+      font-weight: 800;
+      color: #F0EDE6;
+      line-height: 1;
+      pointer-events: none;
+      user-select: none;
+    }
+    .category-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background-color: var(--pink-pill-bg);
+      color: var(--pink-pill-icon);
+      padding: 6px 14px;
+      border-radius: 999px;
+      font-size: 0.75rem;
+      font-weight: 800;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+    .category-pill-dot {
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background-color: var(--pink-pill-icon);
+      color: #fff;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.65rem;
+    }
+    .question-title {
+      font-size: 1.65rem;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      margin-bottom: 28px;
+      position: relative;
+      z-index: 1;
+      max-width: 88%;
+    }
+    .options-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      position: relative;
+      z-index: 1;
+    }
+    .option-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 15px 18px;
+      border-radius: 12px;
+      border: 1px solid var(--border-soft);
+      background-color: var(--bg-cream);
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+    .option-row:hover {
+      border-color: #BDB8AC;
+      background-color: #F2EFE9;
+    }
+    .option-row.selected {
+      border: 2px solid var(--btn-dark);
+      background-color: #EAEFE9;
+    }
+    .option-left {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding-right: 16px;
+    }
+    .status-icon {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.75rem;
+      font-weight: 800;
+      flex-shrink: 0;
+    }
+    .icon-pos-strong, .icon-pos {
+      border: 1.5px solid #A3D9B8;
+      color: var(--green-icon);
+      background-color: #EAF7EF;
+    }
+    .icon-neutral {
+      border: 1.5px solid #D0CDC5;
+      color: #7A7A7A;
+      background-color: #EFECE6;
+    }
+    .icon-neg, .icon-neg-strong {
+      border: 1.5px solid #F2B8B8;
+      color: var(--red-icon);
+      background-color: #FDECEC;
+    }
+    .option-text {
+      font-weight: 600;
+      font-size: 0.95rem;
+      color: var(--text-dark);
+    }
+    .radio-circle {
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      border: 1.5px solid #C5C1B8;
+      flex-shrink: 0;
+    }
+    .option-row.selected .radio-circle {
+      background-color: var(--btn-dark);
+      border-color: var(--btn-dark);
+      box-shadow: inset 0 0 0 3px #fff;
+    }
+
+    /* CONTROLES INFERIORES DEL QUIZ (IMAGEN 3) */
+    .quiz-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 22px;
+    }
+    .btn-nav-quiz {
+      padding: 12px 22px;
+      border-radius: 12px;
+      border: 1px solid var(--border-soft);
+      background-color: var(--card-bg);
+      color: var(--text-muted);
+      font-weight: 700;
+      font-size: 0.9rem;
+      cursor: pointer;
+    }
+    .btn-nav-quiz.primary {
+      background-color: #6E807A;
+      color: #fff;
+      border: none;
+    }
+    .btn-nav-quiz.primary.ready {
+      background-color: var(--btn-dark);
+    }
+    .toggle-wrap {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      font-weight: 500;
+      cursor: pointer;
+    }
+    .toggle-switch {
+      width: 44px;
+      height: 24px;
+      background-color: var(--btn-dark);
+      border-radius: 99px;
+      position: relative;
+      transition: background 0.2s;
+    }
+    .toggle-switch::after {
+      content: "✓";
+      color: var(--btn-dark);
+      font-size: 0.7rem;
+      font-weight: 900;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 18px;
+      height: 18px;
+      background: #fff;
+      border-radius: 50%;
+      position: absolute;
+      top: 3px;
+      right: 3px;
+      transition: all 0.2s;
+    }
+    .toggle-switch.off {
+      background-color: #CCC8BE;
+    }
+    .toggle-switch.off::after {
+      content: "";
+      right: auto;
+      left: 3px;
+    }
+
+    /* VISTA DE RESULTADOS DEL IDIOMA */
+    .results-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      margin-top: 32px;
+    }
+    .result-box {
+      background: var(--card-bg);
+      border: 1px solid var(--border-soft);
+      border-radius: 20px;
+      padding: 28px;
+    }
+    .result-box.full-width {
+      grid-column: 1 / -1;
+    }
+    .glyph-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(95px, 1fr));
+      gap: 14px;
+      margin-top: 18px;
+    }
+    .glyph-item {
+      background: var(--bg-cream);
+      border: 1px solid var(--border-soft);
+      border-radius: 14px;
+      padding: 12px;
+      text-align: center;
+      color: var(--btn-dark);
+    }
+    .glyph-item small {
+      display: block;
+      color: var(--text-muted);
+      font-size: 0.75rem;
+      margin-top: 4px;
+    }
+    .lex-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 14px;
+      font-size: 0.9rem;
+    }
+    .lex-table th, .lex-table td {
+      text-align: left;
+      padding: 10px 8px;
+      border-bottom: 1px solid var(--border-soft);
+    }
+    .gloss-card {
+      background: var(--bg-cream);
+      border-left: 4px solid var(--accent-red);
+      padding: 16px;
+      border-radius: 10px;
+      margin-top: 14px;
+    }
+
+    @media (max-width: 900px) {
+      .hero-grid, .results-grid {
+        grid-template-columns: 1fr;
+      }
+      .hero-title {
+        font-size: 2.8rem;
+      }
+      .nav-links {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- BARRA DE NAVEGACIÓN -->
+  <header>
+    <div class="nav-container">
+      <div class="logo" onclick="showLanding()"><strong>14</strong><span>axes</span></div>
+      <nav class="nav-links">
+        <a href="#how-it-works" onclick="showLanding()">How it works</a>
+        <a href="#axes-section" onclick="showLanding()">14 Axes</a>
+        <a href="#axes-section" onclick="showLanding()">Phonology</a>
+        <a href="#axes-section" onclick="showLanding()">Morphology</a>
+        <a href="#axes-section" onclick="showLanding()">SVG Script</a>
+      </nav>
+      <button class="btn-pill-dark" id="header-cta" onclick="startQuiz()">
+        Start <span>→</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- VISTA 1: PORTADA Y EXPLICACIÓN DE LOS 14 EJES (IMÁGENES 1 Y 2) -->
+  <main id="landing-view">
+    <section class="section-container">
+      <div class="hero-grid">
+        <div>
+          <span class="eyebrow">— LINGUISTIC DISCOVERY & WORLDBUILDING</span>
+          <h1 class="hero-title">
+            Do you really know how your
+            <span class="highlight">fictional language sounds?</span>
+          </h1>
+          <p class="hero-desc">
+            Stop grouping random letters together. In a few minutes, translate your creative intuition into a coherent grammar, lexicon, interlinear gloss, and procedural alphabet across 14 mathematical axes.
+          </p>
+          <div class="hero-buttons">
+            <button class="btn-pill-dark" onclick="startQuiz()">
+              Generate my language <span>→</span>
+            </button>
+            <a href="#axes-section" class="btn-pill-outline" style="text-decoration:none;">
+              See the 14 axes
+            </a>
+          </div>
+          <div class="hero-Trust-tags">
+            <span>Free</span>
+            <span>42 Variables</span>
+            <span>Procedural SVG</span>
+            <span>Instant lexicon</span>
+          </div>
+        </div>
+
+        <!-- TARJETA DE VISTA PREVIA ESTILO IMAGEN 1 -->
+        <div>
+          <span class="example-label">● EXAMPLE RESULT</span>
+          <div class="preview-card">
+            <div class="preview-card-header">
+              <div>
+                <span class="badge-dark-purple">Agglutinative • SOV</span>
+                <h3>Highland Q'eshu</h3>
+              </div>
+              <div class="circle-score">
+                <strong>42/42</strong>
+                <small>RULES</small>
+              </div>
+            </div>
+            <div class="preview-row">
+              <div class="preview-icon-box">/qʼ/</div>
+              <div>
+                <span class="tag-lavender">Acoustic & Morphological Profile</span>
+                <h4>Ejective & Vowel-Harmonic</h4>
+                <span class="tag-beige">Evidentiality Suffixes • Animacy Classes</span>
+              </div>
+            </div>
+            <div class="preview-row">
+              <div class="preview-icon-box">
+                <svg viewBox="0 0 100 100" width="36" height="36">
+                  <path d="M 20 20 L 80 20 L 50 80 M 20 50 L 80 50" fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="square"/>
+                </svg>
+              </div>
+              <div>
+                <span class="tag-lavender">Procedural Writing System</span>
+                <h4>3x3 Chiseled Runic Syllabary</h4>
+                <span class="tag-beige">32 Vector Glyphs • Stone Inscription</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CUADRÍCULA DE LOS 14 EJES (ESTILO IMAGEN 2) -->
+    <section class="section-container" id="axes-section">
+      <div class="axes-header-row">
+        <div>
+          <span class="eyebrow">— 14 AXES</span>
+          <h2 class="axes-title">What does each axis mean?</h2>
+        </div>
+        <p class="axes-subtitle">
+          Each question moves a continuous 1D vector between 0.0 and 1.0, controlling 3 specific linguistic variables (42 parameters in total) across phonology, morphology, syntax, semantics, and script geometry.
+        </p>
+      </div>
+
+      <div class="axes-grid" id="axes-cards-container"></div>
+    </section>
+  </main>
+
+  <!-- VISTA 2: CUESTIONARIO INTERACTIVO (IMAGEN 3) -->
+  <section id="quiz-view">
+    <div class="quiz-wrapper">
+      <div class="progress-header">
+        <span>Question <strong class="progress-Header-bold" id="q-current-index">1</strong> of <strong class="progress-Header-bold" id="q-total-count">14</strong></span>
+        <span id="q-percent-text">0% complete</span>
+      </div>
+      <div class="segmented-bar" id="segmented-progress"></div>
+
+      <div class="question-card">
+        <div class="watermark-num" id="q-watermark">01</div>
+        <div class="category-pill">
+          <span class="category-pill-dot">✦</span>
+          <span id="q-category-label">ACOUSTIC TEXTURE</span>
+        </div>
+        <h2 class="question-title" id="q-text">Loading question...</h2>
+        <div class="options-list" id="q-options-container"></div>
+      </div>
+
+      <div class="quiz-footer">
+        <button class="btn-nav-quiz" onclick="prevQuestion()">← Back</button>
+        <div class="toggle-wrap" onclick="toggleAutoAdvance()">
+          <div class="toggle-switch" id="auto-advance-toggle"></div>
+          <span>Advance on answer</span>
+        </div>
+        <button class="btn-nav-quiz primary" id="btn-next" onclick="nextQuestion()">Next →</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- VISTA 3: RESULTADO GENERADO POR PYTHON -->
+  <section id="results-view" class="section-container">
+    <span class="eyebrow">— GENERATED CONLANG PROFILE</span>
+    <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px;">
+      <h2 class="axes-title" id="res-title">Your Language Architecture</h2>
+      <button class="btn-pill-outline" onclick="startQuiz()">Restart quiz ↻</button>
+    </div>
+
+    <div class="results-grid">
+      <div class="result-box">
+        <span class="tag-lavender">Grammar & Syntax</span>
+        <h3 style="margin:8px 0 12px; font-size:1.5rem;" id="res-typology">Agglutinative</h3>
+        <p id="res-summary-meta" style="color:var(--text-muted); font-size:0.95rem;"></p>
+        <div id="res-sentences"></div>
+      </div>
+
+      <div class="result-box">
+        <span class="tag-lavender">Phonetic Inventory (IPA) & Etymology</span>
+        <h3 style="margin:8px 0 12px; font-size:1.5rem;">Swadesh & Derived Lexicon</h3>
+        <div id="res-ipa-badges" style="display:flex; flex-wrap:wrap; gap:6px; margin-bottom:14px;"></div>
+        <div style="max-height:360px; overflow-y:auto;">
+          <table class="lex-table" id="res-lexicon-table">
+            <thead>
+              <tr><th>Concept</th><th>Word</th><th>Origin / Etymology</th></tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="result-box full-width">
+        <span class="tag-lavender" id="res-script-badge">Writing System</span>
+        <h3 style="margin:8px 0 6px; font-size:1.5rem;" id="res-script-title">Procedural 3x3 Grid Script</h3>
+        <p style="color:var(--text-muted); font-size:0.9rem;" id="res-script-desc"></p>
+        <div class="glyph-grid" id="res-glyph-chart"></div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    // Datos descriptivos de los 14 ejes para poblar las tarjetas de la Imagen 2
+    const AXES_INFO = [
+      { num: "01", name: "Vocal Energy", left: "Whisper", right: "Booming Tone", desc: "Measures laryngeal vibration, balancing unvoiced whispered consonants against resonant plosives and pitch tones." },
+      { num: "02", name: "Airflow", left: "Percussive Clicks", right: "Liquid Flow", desc: "Compares sharp glottal stops, ejectives, and consonant clusters against smooth, vowel-heavy melodic syllables." },
+      { num: "03", name: "Articulation", left: "Labial / Front", right: "Guttural / Back", desc: "Evaluates whether sounds are formed on the lips and teeth with bright vowels or deep in the uvula and throat." },
+      { num: "04", name: "Word Density", left: "Isolating", right: "Polysynthetic", desc: "Determines root length, compound noun formation, and how many affixes can attach to a single word." },
+      { num: "05", name: "Fusion", left: "Lego Agglutination", right: "Root Mutation", desc: "Contrasts strict vowel harmony and regular suffixes against internal root vowel mutations and irregular exceptions." },
+      { num: "06", name: "Action Focus", left: "Verb-Initial (VSO)", right: "Verb-Final (SOV)", desc: "Controls sentence word order, preposition versus postposition usage, and auxiliary verb placement." },
+      { num: "07", name: "Rigidity", left: "Fixed Slots", right: "Free Case Order", desc: "Balances standalone helper particles and fixed syntax against rich grammatical case endings and poetic word scrambling." },
+      { num: "08", name: "Noun Classes", left: "Classless", right: "Shape & Animacy", desc: "Defines grammatical gender, soul/animacy hierarchies, physical geometry prefixes, and adjective agreement." },
+      { num: "09", name: "Abstraction", left: "Nature Metaphors", right: "Academic Roots", desc: "Decides whether complex concepts are built from body/nature compounds ('eye-water') or abstract derivational suffixes." },
+      { num: "10", name: "Timeline", left: "Tenseless Context", right: "Hyper-Tense", desc: "Measures verb conjugation strictness across remote past, mythic time, continuous aspect, or standalone time words." },
+      { num: "11", name: "Evidentiality", left: "Unmarked Fact", right: "Source-Tracked", desc: "Forces verbs to carry suffixes proving whether the speaker witnessed the action, heard a rumor, or deduced it." },
+      { num: "12", name: "Social Rank", left: "Egalitarian", right: "Caste Registers", desc: "Controls honorific verb affixes, multi-tiered pronoun sets, and separate royal vs. commoner vocabulary." },
+      { num: "13", name: "Material Friction", left: "Stone Chisel", right: "Ink Brush", desc: "Guides the 3x3 SVG generator between angular runic cuts and continuous calligraphic Bézier curves." },
+      { num: "14", name: "Graphic Density", left: "Alphabet", right: "Logograms", desc: "Determines whether each generated SVG symbol represents a single phoneme, a syllable, or an entire dictionary root." }
+    ];
+
+    let questions = [];
+    let currentIdx = 0;
+    let selectedAnswers = [];
+    let autoAdvance = true;
+
+    // Renderizar las 14 tarjetas de ejes al cargar
+    const axesContainer = document.getElementById("axes-cards-container");
+    AXES_INFO.forEach(ax => {
+      axesContainer.innerHTML += `
+        <div class="axis-card">
+          <div class="axis-card-title">
+            <span class="axis-num">${ax.num}</span> ${ax.name}
+          </div>
+          <div class="axis-poles">
+            <span>${ax.left}</span> <span class="arrow">↔</span> <span>${ax.right}</span>
+          </div>
+          <p class="axis-desc">${ax.desc}</p>
+        </div>
+      `;
+    });
+
+    async function startQuiz() {
+      if (questions.length === 0) {
+        const res = await fetch("/api/questions");
+        questions = await res.json();
+        selectedAnswers = new Array(questions.length).fill(null);
+      }
+      currentIdx = 0;
+      document.getElementById("landing-view").style.display = "none";
+      document.getElementById("results-view").style.display = "none";
+      document.getElementById("quiz-view").style.display = "block";
+      document.getElementById("header-cta").innerHTML = "Restart quiz →";
+      renderQuestion();
+    }
+
+    function showLanding() {
+      document.getElementById("quiz-view").style.display = "none";
+      document.getElementById("results-view").style.display = "none";
+      document.getElementById("landing-view").style.display = "block";
+      document.getElementById("header-cta").innerHTML = "Start →";
+    }
+
+    function renderQuestion() {
+      const q = questions[currentIdx];
+      const total = questions.length;
+      const pct = Math.round((currentIdx / total) * 100);
+
+      document.getElementById("q-current-index").textContent = currentIdx + 1;
+      document.getElementById("q-total-count").textContent = total;
+      document.getElementById("q-percent-text").textContent = `${pct}% complete`;
+      document.getElementById("q-watermark").textContent = String(currentIdx + 1).padStart(2, "0");
+      document.getElementById("q-category-label").textContent = q.category;
+      document.getElementById("q-text").textContent = q.question_text;
+
+      // Barra segmentada de 14 bloques
+      const bar = document.getElementById("segmented-progress");
+      bar.innerHTML = "";
+      for (let i = 0; i < total; i++) {
+        const seg = document.createElement("div");
+        seg.className = "segment" + (i < currentIdx ? " completed" : (i === currentIdx ? " active" : ""));
+        bar.appendChild(seg);
+      }
+
+      // Iconos estilo 12axes para las 5 opciones
+      const iconStyles = [
+        { cls: "icon-pos-strong", sym: "✓" },
+        { cls: "icon-pos", sym: "✓" },
+        { cls: "icon-neutral", sym: "−" },
+        { cls: "icon-neg", sym: "✕" },
+        { cls: "icon-neg-strong", sym: "✕" }
+      ];
+
+      const optContainer = document.getElementById("q-options-container");
+      optContainer.innerHTML = "";
+
+      q.options.forEach((opt, idx) => {
+        const st = iconStyles[idx] || iconStyles[2];
+        const isSelected = selectedAnswers[currentIdx] && selectedAnswers[currentIdx].option_id === opt.option_id;
+        const row = document.createElement("div");
+        row.className = "option-row" + (isSelected ? " selected" : "");
+        row.onclick = () => selectOption(idx);
+        row.innerHTML = `
+          <div class="option-left">
+            <div class="status-icon ${st.cls}">${st.sym}</div>
+            <span class="option-text">${opt.text}</span>
+          </div>
+          <div class="radio-circle"></div>
+        `;
+        optContainer.appendChild(row);
+      });
+
+      const nextBtn = document.getElementById("btn-next");
+      nextBtn.textContent = currentIdx === total - 1 ? "Generate Language →" : "Next →";
+      nextBtn.className = "btn-nav-quiz primary" + (selectedAnswers[currentIdx] ? " ready" : "");
+    }
+
+    function selectOption(optIdx) {
+      selectedAnswers[currentIdx] = questions[currentIdx].options[optIdx];
+      renderQuestion();
+      if (autoAdvance) {
+        setTimeout(() => nextQuestion(), 260);
+      }
+    }
+
+    function prevQuestion() {
+      if (currentIdx > 0) {
+        currentIdx--;
+        renderQuestion();
+      } else {
+        showLanding();
+      }
+    }
+
+    async function nextQuestion() {
+      if (!selectedAnswers[currentIdx]) {
+        // Si no eligió ninguna, selecciona la neutra por defecto (índice 2)
+        selectedAnswers[currentIdx] = questions[currentIdx].options[2];
+      }
+      if (currentIdx < questions.length - 1) {
+        currentIdx++;
+        renderQuestion();
+      } else {
+        await submitQuiz();
+      }
+    }
+
+    function toggleAutoAdvance() {
+      autoAdvance = !autoAdvance;
+      const el = document.getElementById("auto-advance-toggle");
+      el.className = "toggle-switch" + (autoAdvance ? "" : " off");
+    }
+
+    async function submitQuiz() {
+      const res = await fetch("/api/generate", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ answers: selectedAnswers })
+      });
+      const data = await res.json();
+      renderResults(data);
+    }
+
+    function renderResults(lang) {
+      document.getElementById("quiz-view").style.display = "none";
+      document.getElementById("results-view").style.display = "block";
+
+      document.getElementById("res-typology").textContent =
+        `${lang.morphology.typology} • ${lang.syntax.rules.base_word_order} Word Order`;
+
+      document.getElementById("res-summary-meta").innerHTML = `
+        <strong>Tonal:</strong> ${lang.phonology.is_tonal ? "Yes" : "No"} &nbsp;|&nbsp;
+        <strong>Vowel Harmony:</strong> ${lang.phonology.uses_vowel_harmony ? "Strict" : "None"} &nbsp;|&nbsp;
+        <strong>Adpositions:</strong> ${lang.syntax.rules.adposition_type} &nbsp;|&nbsp;
+        <strong>Cases:</strong> ${Object.keys(lang.morphology.cases).length}
+      `;
+
+      // Oraciones traducidas y glosa interlineal
+      const sentContainer = document.getElementById("res-sentences");
+      sentContainer.innerHTML = "";
+      lang.syntax.translated_corpus.forEach(s => {
+        sentContainer.innerHTML += `
+          <div class="gloss-card">
+            <div style="font-weight:800; font-size:1.1rem; color:var(--btn-dark);">${s.conlang_text}</div>
+            <div style="font-family:monospace; font-size:0.82rem; color:var(--accent-red); margin:4px 0;">${s.interlinear_gloss}</div>
+            <div style="font-size:0.86rem; color:var(--text-muted);">"${s.english_original}"</div>
+          </div>
+        `;
+      });
+
+      // Inventario IPA
+      const ipaContainer = document.getElementById("res-ipa-badges");
+      ipaContainer.innerHTML = "";
+      Object.entries(lang.phonology.ipa_guide).forEach(([sym, ipa]) => {
+        ipaContainer.innerHTML += `<span class="tag-beige"><strong>${sym}</strong> ${ipa}</span>`;
+      });
+
+      // Tabla del diccionario
+      const tbody = document.querySelector("#res-lexicon-table tbody");
+      tbody.innerHTML = "";
+      Object.entries(lang.lexicon.dictionary).forEach(([concept, info]) => {
+        tbody.innerHTML += `
+          <tr>
+            <td><strong>${concept}</strong> <small style="color:var(--text-muted)">(${info.pos})</small></td>
+            <td style="font-weight:800; color:var(--accent-red);">${info.word}</td>
+            <td style="font-size:0.8rem; color:var(--text-muted);">${info.origin}</td>
+          </tr>
+        `;
+      });
+
+      // Alfabeto SVG procedural
+      document.getElementById("res-script-badge").textContent = lang.script.script_type;
+      document.getElementById("res-script-title").textContent =
+        `${lang.script.script_type} (${lang.script.total_glyphs_generated} Glyphs)`;
+      document.getElementById("res-script-desc").textContent = lang.script.writing_tool_style;
+
+      const glyphGrid = document.getElementById("res-glyph-chart");
+      glyphGrid.innerHTML = "";
+      lang.script.glyph_chart.forEach(g => {
+        glyphGrid.innerHTML += `
+          <div class="glyph-item">
+            ${g.svg}
+            <strong>${g.unit}</strong>
+            <small>${g.meaning_or_ipa}</small>
+          </div>
+        `;
+      });
+    }
+  </script>
+</body>
+</html>
